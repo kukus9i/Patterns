@@ -1,12 +1,13 @@
 package com.company;
 
+
 public class PatternsRunner {
 
     public static void main(String[] args) {
 
         System.out.println("--FACTORY--");
 
-        // Factory method //
+        // Factory //
         Factory.FactoryBicycle create = Factory.getCreationalType("mtb"); //type "road" or "mtb"
         Factory.Bicyle bike = create.createbike();
         bike.createBicycle();
@@ -14,7 +15,7 @@ public class PatternsRunner {
 
         System.out.println("\n--ABSTRACT FACTORY--");
 
-        // Abstract Factory method //
+        // Abstract Factory //
         AbstractFactory.FactoryFile make = AbstractFactory.getCreationalType("two"); //type "first" or "two"
         AbstractFactory.Document document = make.getDocument();
         AbstractFactory.MusicFile music = make.getMusic();
@@ -27,7 +28,7 @@ public class PatternsRunner {
 
         System.out.println("\n--BUILDER--");
 
-        // Builder method //
+        // Builder //
         Builder.Figure figure = new Builder.FigureBuilder()
                 .buildForm("triangle")
                 .buildFill("fill")
@@ -35,6 +36,16 @@ public class PatternsRunner {
                 .build();
         System.out.println(figure);
         //////////////////////////////
+
+        System.out.println("\n--PROTOTYPE--");
+
+        // Prototype //
+        Prototype.Book book = new Prototype.Book("Patterns in Java ","Mark Grand");
+        System.out.println(book);
+
+        Prototype.Book cloneBook = (Prototype.Book)book.clone();
+        System.out.println(cloneBook);
+
     }
 }
 
