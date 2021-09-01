@@ -8,6 +8,16 @@ public class PatternsRunner {
         Factory.Bicyle bike = create.createbike();
         bike.createBicycle();
 
+
+        AbstractFactory.FactoryFile make = AbstractFactory.getCreationalType("two"); //type "first" or "two"
+        AbstractFactory.Document document = make.getDocument();
+        AbstractFactory.MusicFile music = make.getMusic();
+        AbstractFactory.Pictures pictures = make.getPictures();
+
+        document.createDocument();
+        music.createMusic();
+        pictures.createPictures();
+
     }
 }
 
