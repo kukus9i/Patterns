@@ -45,7 +45,15 @@ public class PatternsRunner {
 
         Prototype.Book cloneBook = (Prototype.Book)book.clone();
         System.out.println(cloneBook);
+        //////////////////////////////
 
+        System.out.println("\n--SINGLETON--");
+
+        // Singletone //
+        Singletone s =  Singletone.getInstance();
+        Singletone b =  Singletone.getInstance();
+        System.out.println(Singletone.counter);
+        //////////////////////////////
     }
 }
 
