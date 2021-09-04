@@ -9,7 +9,7 @@ public class NumbToWordRunner {
         ConvertValueToString numbConvert = new ConvertValueToString();
 
         int numberFromConsole = 0;
-        System.out.println("input Value:");
+        System.out.println("input Value: 0~10");
         numberFromConsole = inPutValue.nextInt();
 
        System.out.println(numbConvert.getWordFromNumber(numberFromConsole));

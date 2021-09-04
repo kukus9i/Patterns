@@ -14,7 +14,7 @@ public class PatternsRunner {
         //////////////////////////////
 
         System.out.println("\n--ABSTRACT FACTORY--");
-
+//adasda
         // Abstract Factory //
         AbstractFactory.FactoryFile make = AbstractFactory.getCreationalType("two"); //type "first" or "two"
         AbstractFactory.Document document = make.getDocument();
