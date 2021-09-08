@@ -8,13 +8,19 @@ public class PatternsRunner {
         System.out.println("--FACTORY--");
 
         // Factory //
-        Factory.FactoryBicycle create = Factory.getCreationalType("mtb"); //type "road" or "mtb"
-        Factory.Bicyle bike = create.createbike();
-        bike.createBicycle();
+        Factory factoryRoadBicycle = new CreateRoadBicycle();
+        Bicycle roadBicycle = factoryRoadBicycle.createBicycle();
+        System.out.println(roadBicycle.toString());
+
+        Factory factory = FactoryPattern.getCreateType("mtb");
+        Bicycle mtbBicycle = factory.createBicycle();
+        System.out.println(mtbBicycle.toString());
+
+
         //////////////////////////////
 
         System.out.println("\n--ABSTRACT FACTORY--");
-//adasda
+
         // Abstract Factory //
         AbstractFactory.FactoryFile make = AbstractFactory.getCreationalType("two"); //type "first" or "two"
         AbstractFactory.Document document = make.getDocument();
