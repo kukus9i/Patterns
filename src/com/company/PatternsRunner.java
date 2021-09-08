@@ -15,21 +15,24 @@ public class PatternsRunner {
         Factory factory = FactoryPattern.getCreateType("mtb");
         Bicycle mtbBicycle = factory.createBicycle();
         System.out.println(mtbBicycle.toString());
-
-
         //////////////////////////////
 
         System.out.println("\n--ABSTRACT FACTORY--");
 
         // Abstract Factory //
-        AbstractFactory.FactoryFile make = AbstractFactory.getCreationalType("two"); //type "first" or "two"
-        AbstractFactory.Document document = make.getDocument();
-        AbstractFactory.MusicFile music = make.getMusic();
-        AbstractFactory.Pictures pictures = make.getPictures();
+//        AbstractFactory.FactoryFile make = AbstractFactory.getCreationalType("two"); //type "first" or "two"
+//        AbstractFactory.Document document = make.getDocument();
+//        AbstractFactory.MusicFile music = make.getMusic();
+//        AbstractFactory.Pictures pictures = make.getPictures();
+//
+//        document.createDocument();
+//        music.createMusic();
+//        pictures.createPictures();
+        AbstractFactory abfactorymage = new CreateMageCharacter();
+        Character mage = abfactorymage.createCharacter();
+        mage.getHealPoint();
 
-        document.createDocument();
-        music.createMusic();
-        pictures.createPictures();
+
         //////////////////////////////
 
         System.out.println("\n--BUILDER--");
