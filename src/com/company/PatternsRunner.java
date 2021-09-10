@@ -8,7 +8,7 @@ public class PatternsRunner {
         System.out.println("--FACTORY--");
 
         // Factory //
-        Factory factoryRoadBicycle = new CreateRoadBicycle();
+        Factory factoryRoadBicycle = new RoadBicycleFactory();
         Bicycle roadBicycle = factoryRoadBicycle.createBicycle();
         System.out.println(roadBicycle.toString());
 
@@ -20,11 +20,11 @@ public class PatternsRunner {
         System.out.println("\n--ABSTRACT FACTORY--");
 
         // Abstract Factory //
-        AbstractFactory mageFactory = new FactoryMageCharacter();
+        AbstractFactory mageFactory = new MageCharacterFactory();
         AbstractFactoryPattern mage = new AbstractFactoryPattern(mageFactory);
         mage.showStatsToConsole();
 
-        AbstractFactory warriorFactory = new FactoryWarriorCharacter();
+        AbstractFactory warriorFactory = new WarriorCharacterFactory();
         AbstractFactoryPattern warrior = new AbstractFactoryPattern(warriorFactory);
         warrior.showStatsToConsole();
         //////////////////////////////

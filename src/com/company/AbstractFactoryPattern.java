@@ -47,7 +47,7 @@ class StatsToString {
 }
 
 
-class MageChar extends StatsToString implements Character {
+class MageChar implements Character {
     public String getTypeCharacter() {
         return "mage";
     }
@@ -61,11 +61,11 @@ class MageChar extends StatsToString implements Character {
     }
 
     public String toString() {
-        return toStringCharacterStat(this);
+        return new StatsToString().toStringCharacterStat(this);
     }
 }
 
-class WarriorChar extends StatsToString implements Character {
+class WarriorChar implements Character {
     public String getTypeCharacter() {
         return "warrior";
     }
@@ -79,7 +79,7 @@ class WarriorChar extends StatsToString implements Character {
     }
 
     public String toString() {
-        return toStringCharacterStat(this);
+        return new StatsToString().toStringCharacterStat(this);
     }
 }
 
@@ -93,7 +93,7 @@ class MageEquip extends StatsToString implements Equipment {
     }
 
     public String toString() {
-        return toStringEquipStat(this);
+        return new StatsToString().toStringEquipStat(this);
     }
 }
 
@@ -107,7 +107,7 @@ class WarriorEquip extends StatsToString implements Equipment {
     }
 
     public String toString() {
-        return toStringEquipStat(this);
+        return new StatsToString().toStringEquipStat(this);
     }
 }
 
@@ -117,7 +117,7 @@ abstract class AbstractFactory {
     abstract public Equipment createEquipment();
 }
 
-class FactoryMageCharacter extends AbstractFactory {
+class MageCharacterFactory extends AbstractFactory {
     public Character createCharacter() {
         return new MageChar();
     }
@@ -127,7 +127,7 @@ class FactoryMageCharacter extends AbstractFactory {
     }
 }
 
-class FactoryWarriorCharacter extends AbstractFactory {
+class WarriorCharacterFactory extends AbstractFactory {
     public Character createCharacter() {
         return new WarriorChar();
     }
