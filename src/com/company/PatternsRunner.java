@@ -12,6 +12,7 @@ public class PatternsRunner {
         Bicycle roadBicycle = factoryRoadBicycle.createBicycle();
         System.out.println(roadBicycle.toString());
 
+
         Factory factory = FactoryPattern.getCreateType("mtb");
         Bicycle mtbBicycle = factory.createBicycle();
         System.out.println(mtbBicycle.toString());
@@ -32,27 +33,27 @@ public class PatternsRunner {
         System.out.println("\n--BUILDER--");
 
         // Builder //
-        Builder.Figure figure = new Builder.FigureBuilder()
-                .buildForm("triangle")
+        Shape triangle = new ShapeBuilder()
+                .buildColor("red")
                 .buildFill("fill")
-                //        .buildColor("red")
+                .buildForm("triangle")
                 .build();
-        System.out.println(figure);
+        System.out.println(triangle);
         //////////////////////////////
 
         System.out.println("\n--PROTOTYPE--");
 
         // Prototype //
-        Prototype.Book book = new Prototype.Book("Patterns in Java ", "Mark Grand");
+        Book book = new Book("Patterns in Java ", "Mark Grand");
         System.out.println(book);
 
-        Prototype.Book cloneBook = (Prototype.Book) book.clone();
+        Book cloneBook = (Book) book.clone();
         System.out.println(cloneBook);
         //////////////////////////////
 
         System.out.println("\n--SINGLETON--");
 
-        // Singletone //
+        // Singleton //
         Singletone s = Singletone.getInstance();
         Singletone b = Singletone.getInstance();
         System.out.println(Singletone.counter);

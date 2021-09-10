@@ -1,55 +1,75 @@
 package com.company;
 
-public class Builder {
+public interface Builder {
+    ShapeBuilder buildForm(String form);
 
-    static class Figure {
-        String theForm;
-        String theFilled;
-        String collor;
+    ShapeBuilder buildFill(String fill);
 
-        public void setTheForm(String theForm) {
-            this.theForm = theForm;
-        }
+    ShapeBuilder buildColor(String color);
+}
 
-        public void setTheFilled(String theFilled) {
-            this.theFilled = theFilled;
-        }
+class ShapeBuilder implements Builder {
+    private String form = "square";
+    private String fill = "not fill";
+    private String color = "black";
 
-        public void setCollor(String collor) {
-                this.collor = collor;
-        }
-        public String toString(){
-            return "Figure created \nForm:\t" + theForm + "\nFill:\t" + theFilled + "\nColor:\t" + collor ;
-        }
+
+    public ShapeBuilder buildForm(String form) {
+        this.form = form;
+        return this;
     }
 
-    static class FigureBuilder {
-        String formOfFigure = "square";
-        String filledOfFigure = "not filled";
-        String collorOfFigure = "black";
+    public ShapeBuilder buildFill(String fill) {
+        this.fill = fill;
+        return this;
+    }
 
-        FigureBuilder buildForm(String formOfFigure) {
-            this.formOfFigure = formOfFigure;
-            return this;
-        }
+    public ShapeBuilder buildColor(String color) {
+        this.color = color;
+        return this;
+    }
 
-        FigureBuilder buildFill(String filledOfFigure) {
-            this.filledOfFigure = filledOfFigure;
-            return this;
-        }
 
-        FigureBuilder buildColor(String collorOfFigure) {
-            this.collorOfFigure = collorOfFigure;
-            return this;
-        }
+    public Shape build() {
+        Shape shape = new Shape();
+        shape.setShapeForm(this.form);
+        shape.setShapeFill(this.fill);
+        shape.setShapeColor(this.color);
+        return shape;
+    }
+}
 
-        Figure build() {
-            Figure figure = new Figure();
-            figure.setTheForm(formOfFigure);
-            figure.setTheFilled(filledOfFigure);
-            figure.setCollor(collorOfFigure);
-            return figure;
 
-        }
+class Shape {
+    private String shapeForm;
+    private String shapeFill;
+    private String shapeColor;
+
+    public String getShapeForm() {
+        return this.shapeForm;
+    }
+
+    public String getShapeFill() {
+        return this.shapeFill;
+    }
+
+    public String getShapeColor() {
+        return this.shapeColor;
+    }
+
+    public void setShapeForm(String shapeForm) {
+        this.shapeForm = shapeForm;
+    }
+
+    public void setShapeFill(String shapeFill) {
+        this.shapeFill = shapeFill;
+    }
+
+    public void setShapeColor(String shapeColor) {
+        this.shapeColor = shapeColor;
+    }
+
+    public String toString() {
+        return "Shape created \nForm:\t" + shapeForm + "\nFill:\t" + shapeFill + "\nColor:\t" + shapeColor;
     }
 }
