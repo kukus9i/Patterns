@@ -15,6 +15,31 @@ public class AbstractFactoryPattern {
     }
 
 }
+abstract class AbstractFactory {
+    abstract public Character createCharacter();
+
+    abstract public Equipment createEquipment();
+}
+
+class MageCharacterFactory extends AbstractFactory {
+    public Character createCharacter() {
+        return new MageChar();
+    }
+
+    public Equipment createEquipment() {
+        return new MageEquip();
+    }
+}
+
+class WarriorCharacterFactory extends AbstractFactory {
+    public Character createCharacter() {
+        return new WarriorChar();
+    }
+
+    public Equipment createEquipment() {
+        return new WarriorEquip();
+    }
+}
 
 interface Character {
     String getTypeCharacter();
@@ -111,28 +136,3 @@ class WarriorEquip extends StatsToString implements Equipment {
     }
 }
 
-abstract class AbstractFactory {
-    abstract public Character createCharacter();
-
-    abstract public Equipment createEquipment();
-}
-
-class MageCharacterFactory extends AbstractFactory {
-    public Character createCharacter() {
-        return new MageChar();
-    }
-
-    public Equipment createEquipment() {
-        return new MageEquip();
-    }
-}
-
-class WarriorCharacterFactory extends AbstractFactory {
-    public Character createCharacter() {
-        return new WarriorChar();
-    }
-
-    public Equipment createEquipment() {
-        return new WarriorEquip();
-    }
-}
