@@ -20,7 +20,7 @@ public class Facade {
     }
 
     void reHeatFood(String food) {
-        microwave.reHeatFood(food);
+        microwave.reHeat(food);
     }
 
 
