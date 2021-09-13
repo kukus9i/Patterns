@@ -1,0 +1,24 @@
+
+
+################ Package Files ##################
+*.jar
+*.war
+*.ear
+*.swp
+datanucleus.log
+/bin/
+*.log
+event-sourcing/Journal.json
+
+################## Checkstyle ###################
+.checkstyle
+
+
+
+################# IntelliJ IDEA #################
+.idea
+*.iws
+*.iml
+*.ipr
+*.class
+/out

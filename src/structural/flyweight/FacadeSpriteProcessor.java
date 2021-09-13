@@ -3,7 +3,7 @@ package structural.flyweight;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FacadeSpriteProccesor {   //FACADE?
+public class FacadeSpriteProcessor {
 
     private SpritesFactory spritesFactory = new SpritesFactory();
     private List<Sprites> spriteCloud = new ArrayList<>();
