@@ -1,4 +1,4 @@
-package com.company;
+package creational;
 
 public class AbstractFactoryPattern {
     private Character character;

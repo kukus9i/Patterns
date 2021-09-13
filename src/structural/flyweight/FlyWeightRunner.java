@@ -1,7 +1,7 @@
 package structural.flyweight;
 
 
-public class FlyRunner {
+public class FlyWeightRunner {
     public static void main(String[] args) {
         FacadeSpriteProccesor proccesor = new FacadeSpriteProccesor();
         proccesor.createSprite(5,"cloud");
